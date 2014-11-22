@@ -1,1 +1,7 @@
-body { font: 12px Arial;}
+body { 
+	background-color: #F4F4F4 !important;
+}
+.centeredContent { 
+	text-align: center;
+	width:100%;
+}
