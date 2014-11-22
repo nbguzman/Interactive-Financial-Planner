@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Add New Event</title>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="../stylesheets/newEvent.css">
+	</head>
+
+	<body>
+		<!-- load the d3.js library -->    
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<!-- jQuery -->
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+		<h1 class="centeredContent">Add Financial Event</h1>
+
+		<div class="centeredContent">
+			<span><a class="btn btn-default" href="planner.html">Spending</a></span>
+			<span><a class="btn btn-default" href="planner.html">Saving</a></span>
+			<span><a class="btn btn-default" href="planner.html">Rate of Return</a></span>
+		</div>
+
+		<div id="newEventForm" class="division">
+			<h4>New Planned Spending</h4>
+
+			<p>Amount:</p>
+			<p style="margin-left:20px">$ <input type="number" placeholder="15,000"></p>
+
+			<p>Date of planned expense:</p>
+			<div style="margin-left:20px">
+				<div id="datepicker"></div>
+
+				<script>
+					$(function() {
+						$("#datepicker").datepicker();
+					});
+				</script>
+			</div>
+
+			<p>Description:</p>
+			<textarea  style="margin-left:20px" rows="4" cols="50" placeholder="Reason to save money for: re-shingle roof, retirement fund, anniversary present"></textarea>
+		</div>
+	</body>
+</html>
