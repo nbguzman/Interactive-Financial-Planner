@@ -12,9 +12,6 @@
 	float: left;
 	width: 70%;
 }
-.division {
-	padding: 10px;
-}
 path { 
 	fill: none;
 	stroke: steelblue;
@@ -29,10 +26,12 @@ path {
 	background-color: white;
 	border: solid 2px black;
 	border-radius: 10px;
+	overflow: auto;
 }
 #summaryBox {
 	border: solid 2px black;
 	border-radius: 10px;
+	overflow: auto;
 	width: 80%;
 }
 #summaryBox > hr {
