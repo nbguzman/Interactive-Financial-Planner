@@ -14,6 +14,50 @@
 		<script src="../data/data.js"></script>
 		<!-- load the d3 example code -->
 		<script src="../js/planner.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<!-- Optional: Include the jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+		<h1 class="centeredContent">Financial Savings Planner</h1>
+		<div id="allContent">
+			<div id="chartContent" class="division">
+				<h3>Projected Savings</h3>
+				<div id="savingsBox">
+				</div>
+			</div>
+
+			<div id="sidebar" class="division">
+				<button type="button" class="btn btn-default" aria-label="Left Align">
+					<span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>Add New Event
+				</button>
+
+				<button type="button" class="btn btn-default" aria-label="Left Align">
+					<span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span>
+				</button>
+				<br/><br/>
+				<h4>Summary:</h4>
+				<div id="summaryBox">
+					<br/>
+					<ul class="summaryItem">
+						<li>Average Return</li>
+						<ul><li class="summaryItem">--%</li></ul>
+					</ul>
+					<hr/><br/>
+					<ul class="summaryItem">
+						<li>Average Monthly Contribution</li>
+						<ul><li class="summaryItem">$--</li></ul>
+					</ul>
+					<hr/><br/>
+					<ul class="summaryItem">
+						<li>Retirement Total</li>
+						<ul><li class="summaryItem">$--</li></ul>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 		<script>
 			init();

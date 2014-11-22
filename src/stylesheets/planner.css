@@ -1,15 +1,49 @@
-body { font: 12px Arial;}
-
-path { 
-	stroke: steelblue;
-	stroke-width: 2;
-	fill: none;
+#allContent{
+	margin-top: 20px;
 }
-
 .axis path,
 .axis line {
 	fill: none;
+	shape-rendering: crispEdges;
 	stroke: grey;
 	stroke-width: 1;
-	shape-rendering: crispEdges;
+}
+#chartContent {
+	float: left;
+	width: 70%;
+}
+.division {
+	padding: 10px;
+}
+path { 
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 2;
+}
+
+#sidebar {
+	float: right;
+	width: 30%;
+}
+#savingsBox {
+	background-color: white;
+	border: solid 2px black;
+	border-radius: 10px;
+}
+#summaryBox {
+	border: solid 2px black;
+	border-radius: 10px;
+	width: 80%;
+}
+#summaryBox > hr {
+	border: 1px solid black;
+	margin: 0px;
+}
+.summaryItem {
+	list-style-type: none;
+	padding-left: 5px;
+}
+.summaryItem > li {
+	list-style-type: none;
+	padding-left: px;
 }
