@@ -24,7 +24,7 @@ var init = function() {
 		.y(function(d) { return y(d.close); });
 		
 	// Adds the svg canvas
-	var svg = d3.select("body")
+	var svg = d3.select("#savingsBox")
 		.append("svg")
 			.attr("width", width + margin.left + margin.right)
 			.attr("height", height + margin.top + margin.bottom)
