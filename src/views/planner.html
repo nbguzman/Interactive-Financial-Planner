@@ -10,16 +10,23 @@
 	<body>
 		<!-- load the d3.js library -->    
 		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<!-- jQuery -->
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 		<!-- load the data were using -->
 		<script src="../data/data.js"></script>
 		<!-- load the d3 example code -->
 		<script src="../js/planner.js"></script>
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<!-- Optional: Include the jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 		<h1 class="centeredContent">Financial Savings Planner</h1>
 		<div id="allContent">
@@ -30,31 +37,38 @@
 			</div>
 
 			<div id="sidebar" class="division">
-				<button type="button" class="btn btn-default" aria-label="Left Align">
-					<span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>Add New Event
-				</button>
+				<form action="addNewEvent.html" style="float:left">
+					<button type="submit" class="btn btn-default" aria-label="Left Align">
+						<span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>Add New Event
+					</button>
+				</form>
 
-				<button type="button" class="btn btn-default" aria-label="Left Align">
-					<span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span>
-				</button>
+				<form action="settings.html" style="float:left; clear:right">
+					<button type="submit" class="btn btn-default" aria-label="Left Align">
+						<span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span>
+					</button>
+				</form>
+			
 				<br/><br/>
-				<h4>Summary:</h4>
-				<div id="summaryBox">
-					<br/>
-					<ul class="summaryItem">
-						<li>Average Return</li>
-						<ul><li class="summaryItem">--%</li></ul>
-					</ul>
-					<hr/><br/>
-					<ul class="summaryItem">
-						<li>Average Monthly Contribution</li>
-						<ul><li class="summaryItem">$--</li></ul>
-					</ul>
-					<hr/><br/>
-					<ul class="summaryItem">
-						<li>Retirement Total</li>
-						<ul><li class="summaryItem">$--</li></ul>
-					</ul>
+				<div style="clear:both">
+					<h4>Summary:</h4>
+					<div id="summaryBox">
+						<br/>
+						<ul class="summaryItem">
+							<li>Average Return</li>
+							<ul><li class="summaryItem">--%</li></ul>
+						</ul>
+						<hr/><br/>
+						<ul class="summaryItem">
+							<li>Average Monthly Contribution</li>
+							<ul><li class="summaryItem">$--</li></ul>
+						</ul>
+						<hr/><br/>
+						<ul class="summaryItem">
+							<li>Retirement Total</li>
+							<ul><li class="summaryItem">$--</li></ul>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
