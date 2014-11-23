@@ -38,7 +38,13 @@ var addUserEvent = function(){
 	console.log(description);
 	console.log(date);
 
+	// change date to d3 date
+	// we have Sun Nov 23 2014 00:00:00 GMT-0500 (Eastern Standard Time)
+	// d3 wants 25-Apr-12
+	date = (date.toString().substr(8,2)+'-'+date.toString().substr(4,3)+'-'+date.toString().substr(13,2)).toString();
+
 	// reached here, all fields are good, add event
+	var userEvents = JSON.parse(localStorage.getItem("userEvents")) || [];
 	userEvents.push({
 		'type': currentEventMode,
 		'amount': amount,
