@@ -1,3 +1,9 @@
+.active {
+	background-color: #0081FF !important;
+	font-weight: bolder !important;
+	color: black !important;
+	text-shadow: none !important;
+}
 #newEventForm{
 	margin-left: 15px;
 	padding-left: 50px;
