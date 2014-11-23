@@ -37,8 +37,7 @@
 					<br/>
 					<script type="text/javascript">
 						var events = JSON.parse(localStorage.getItem("userEvents"));
-						if (events.length > 0) {
-							console.log(events);
+						if (events != null && events.length > 0) {
 							$.each(events, function(key, value) {
 								var statement = '<div class="eventDetails">';
 								if (value.type.value === EVENT_MODE.SPENDING.value) {
