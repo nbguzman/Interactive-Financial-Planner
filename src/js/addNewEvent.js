@@ -46,10 +46,14 @@ var addUserEvent = function(){
 	// reached here, all fields are good, add event
 	var userEvents = JSON.parse(localStorage.getItem("userEvents")) || [];
 	userEvents.push({
-		'type': currentEventMode,
+		'type': localStorage.getItem("currentEventMode"),
 		'amount': amount,
 		'date': date,
 		'description': description
 	});
 	localStorage.setItem("userEvents", JSON.stringify(userEvents));
+};
+var changeEventType = function(context) {
+	localStorage.setItem("currentEventMode", EVENT_MODE_NAME.indexOf(context));
+	location.reload();
 };

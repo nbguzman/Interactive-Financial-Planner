@@ -8,8 +8,22 @@ data = [
 ];
 
 var EVENT_MODE = {
-	SPENDING: {value: 0, name: "SPENDING"},
-	SAVING: {value: 1, name: "SAVING"},
-	ROR: {value: 2, name: "ROR"}
+	SPENDING: 0,
+	SAVING: 1,
+	ROR: 2,
 };
-var currentEventMode = EVENT_MODE.ROR;
+var EVENT_MODE_NAME = [
+	"SPENDING",
+	"SAVING",
+	"ROR"
+];
+
+var modeChoice = function() {
+	var currentEventMode = (localStorage.getItem("currentEventMode"));
+	if(currentEventMode == null || currentEventMode=="null"){
+		console.log("event mode is null");
+		console.log("going to store");
+		console.log(EVENT_MODE.SPENDING);
+		localStorage.setItem("currentEventMode", EVENT_MODE.SPENDING);
+	}
+};

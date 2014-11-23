@@ -28,6 +28,8 @@
 		<!-- load the d3 example code -->
 		<script src="../js/planner.js"></script>
 
+		<script>modeChoice();</script>
+
 		<h1 class="centeredContent">Financial Savings Planner</h1>
 		<div id="allContent">
 			<div id="chartContent" class="division">
@@ -40,13 +42,13 @@
 						if (events != null && events.length > 0) {
 							$.each(events, function(key, value) {
 								var statement = '<div class="eventDetails">';
-								if (value.type.value === EVENT_MODE.SPENDING.value) {
+								if (value.type == EVENT_MODE.SPENDING) {
 									statement += '<div class="circle circleSpending">'+(key+1)+'</div>';
 									statement += ("At "+value.date+" - Spend $"+value.amount+": "+value.description);
-								} else if (value.type.value === EVENT_MODE.SAVING.value) {
+								} else if (value.type == EVENT_MODE.SAVING) {
 									statement += '<div class="circle circleSaving">'+(key+1)+'</div>';
 									statement += ("At "+value.date+" - Spend $"+value.amount+": "+value.description);
-								} else if (value.type.value === EVENT_MODE.ROR.value) {
+								} else if (value.type == EVENT_MODE.ROR) {
 									statement += '<div class="circle circleROR">'+(key+1)+'</div>';
 									statement += ("At "+value.date+" - Rate of return changed to "+value.amount+"%. "+value.description);
 								}
