@@ -21,7 +21,7 @@ var init = function() {
 	// Define the line
 	var valueline = d3.svg.line()
 		.x(function(d) { return x(d.date); })
-		.y(function(d) { return y(d.close); });
+		.y(function(d) { return y(d.amount); });
 		
 	// Adds the svg canvas
 	var svg = d3.select("#savingsBox")
@@ -32,20 +32,24 @@ var init = function() {
 			.attr("transform", 
 				  "translate(" + margin.left + "," + margin.top + ")");
 
-	// Get the data
-	data.forEach(function(d) {
+	var userEvents = JSON.parse(localStorage.getItem("userEvents"));
+	if (!(events != null && events.length > 0)) {
+		console.log("no data");
+		return;
+	}
+
+	userEvents.forEach(function(d) {
 		d.date = parseDate(d.date);
-		d.close = +d.close;
 	});
 
 	// Scale the range of the data
-	x.domain(d3.extent(data, function(d) { return d.date; }));
-	y.domain([0, d3.max(data, function(d) { return d.close; })]);
+	x.domain(d3.extent(userEvents, function(d) { return d.date; }));
+	y.domain([0, d3.max(userEvents, function(d) { return d.amount; })]);
 
 	// Add the valueline path.
 	svg.append("path")
 		.attr("class", "line")
-		.attr("d", valueline(data));
+		.attr("d", valueline(userEvents));
 
 	// Add the X Axis
 	svg.append("g")
@@ -57,5 +61,4 @@ var init = function() {
 	svg.append("g")
 		.attr("class", "y axis")
 		.call(yAxis);
-
 };

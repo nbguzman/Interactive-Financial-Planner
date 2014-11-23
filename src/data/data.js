@@ -13,4 +13,3 @@ var EVENT_MODE = {
 	ROR: {value: 2, name: "ROR"}
 };
 var currentEventMode = EVENT_MODE.ROR;
-var userEvents = [];
