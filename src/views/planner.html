@@ -32,7 +32,30 @@
 		<div id="allContent">
 			<div id="chartContent" class="division">
 				<h3>Projected Savings</h3>
-				<div id="savingsBox">
+				<div id="savingsBox"></div>
+				<div>
+					<br/>
+					<script type="text/javascript">
+						var events = JSON.parse(localStorage.getItem("userEvents"));
+						if (events.length > 0) {
+							console.log(events);
+							$.each(events, function(key, value) {
+								var statement = '<div class="eventDetails">';
+								if (value.type.value === EVENT_MODE.SPENDING.value) {
+									statement += '<div class="circle circleSpending">'+(key+1)+'</div>';
+									statement += ("At "+value.date+" - Spend $"+value.amount+": "+value.description);
+								} else if (value.type.value === EVENT_MODE.SAVING.value) {
+									statement += '<div class="circle circleSaving">'+(key+1)+'</div>';
+									statement += ("At "+value.date+" - Spend $"+value.amount+": "+value.description);
+								} else if (value.type.value === EVENT_MODE.ROR.value) {
+									statement += '<div class="circle circleROR">'+(key+1)+'</div>';
+									statement += ("At "+value.date+" - Rate of return changed to "+value.amount+"%. "+value.description);
+								}
+								statement += '</div>';
+								document.write(statement);
+							});
+						}
+					</script>
 				</div>
 			</div>
 

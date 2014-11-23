@@ -8,8 +8,9 @@ data = [
 ];
 
 var EVENT_MODE = {
-	SPENDING: {VALUE: 0, name: "SPENDING"},
-	SAVING: {VALUE: 0, name: "SAVING"},
-	ROR: {VALUE: 0, name: "ROR"}
+	SPENDING: {value: 0, name: "SPENDING"},
+	SAVING: {value: 1, name: "SAVING"},
+	ROR: {value: 2, name: "ROR"}
 };
-var newEventMode = EVENT_MODE.ROR;
+var currentEventMode = EVENT_MODE.ROR;
+var userEvents = [];

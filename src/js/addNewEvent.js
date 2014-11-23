@@ -1,5 +1,3 @@
-userEvents = [];
-
 var addUserEvent = function(){
 	var amount = description = date = null;
 	try{
@@ -41,6 +39,11 @@ var addUserEvent = function(){
 	console.log(date);
 
 	// reached here, all fields are good, add event
-	userEvents.push({});
-
+	userEvents.push({
+		'type': currentEventMode,
+		'amount': amount,
+		'date': date,
+		'description': description
+	});
+	localStorage.setItem("userEvents", JSON.stringify(userEvents));
 };

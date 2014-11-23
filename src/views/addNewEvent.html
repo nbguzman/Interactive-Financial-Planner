@@ -37,7 +37,7 @@
 			<span><a id="ROR" class="btn btn-default" href="planner.html">Rate of Return</a></span>
 
 			<script type="text/javascript">
-				$('#'+newEventMode.name).addClass("active");
+				$('#'+currentEventMode.name).addClass("active");
 			</script>
 		</div>
 
@@ -51,11 +51,11 @@
 
 			<h4><script type="text/javascript">
 				(function() {
-					if(newEventMode === EVENT_MODE.SPENDING){
+					if(currentEventMode === EVENT_MODE.SPENDING){
 						document.write('New Planned Spending');
-					} else if(newEventMode === EVENT_MODE.SAVING){
+					} else if(currentEventMode === EVENT_MODE.SAVING){
 						document.write('New Planned Saving');
-					} else if(newEventMode === EVENT_MODE.ROR){
+					} else if(currentEventMode === EVENT_MODE.ROR){
 						document.write('Rate Change');
 					}
 				})();
@@ -64,15 +64,15 @@
 			<div>
 				<script type="text/javascript">
 					(function() {
-						if(newEventMode === EVENT_MODE.SPENDING){
+						if(currentEventMode === EVENT_MODE.SPENDING){
 							document.write(
 								'<p>Amount:</p>'+
 								'<p style="margin-left:20px">$ <input id="eventAmount" type="number" placeholder="15,000"></p>');
-						} else if(newEventMode === EVENT_MODE.SAVING){
+						} else if(currentEventMode === EVENT_MODE.SAVING){
 							document.write(
 								'<p>Amount:</p>'+
 								'<p style="margin-left:20px">$ <input id="eventAmount" type="number" placeholder="15,000"></p>');
-						} else if(newEventMode === EVENT_MODE.ROR){
+						} else if(currentEventMode === EVENT_MODE.ROR){
 							document.write(
 								'<span>New expected rate of return:</span>'+
 								'<p style="margin-left:20px"><input id="eventAmount" type="number" placeholder="5">%</p><br/>');
@@ -84,11 +84,11 @@
 
 			<p><script type="text/javascript">
 				(function() {
-					if(newEventMode === EVENT_MODE.SPENDING){
+					if(currentEventMode === EVENT_MODE.SPENDING){
 						document.write('Date of planned expense:');
-					} else if(newEventMode === EVENT_MODE.SAVING){
+					} else if(currentEventMode === EVENT_MODE.SAVING){
 						document.write('Date of planned expense:');
-					} else if(newEventMode === EVENT_MODE.ROR){
+					} else if(currentEventMode === EVENT_MODE.ROR){
 						document.write('Date when new rate takes effect:');
 					}
 				})();
@@ -103,11 +103,11 @@
 			<textarea id="eventDescription" style="margin-left:20px" rows="4" cols="50" placeholder=""></textarea>
 			<script type="text/javascript">
 				(function() {
-					if(newEventMode === EVENT_MODE.SPENDING){
+					if(currentEventMode === EVENT_MODE.SPENDING){
 						$('#eventDescription').attr("placeholder", "Reason to save money for: re-shingle roof, retirement fund, anniversary present");
-					} else if(newEventMode === EVENT_MODE.SAVING){
+					} else if(currentEventMode === EVENT_MODE.SAVING){
 						$('#eventDescription').attr("placeholder", "Reason to save money for: re-shingle roof, retirement fund, anniversary present");
-					} else if(newEventMode === EVENT_MODE.ROR){
+					} else if(currentEventMode === EVENT_MODE.ROR){
 						$('#eventDescription').attr("placeholder", "Move investments into less risky funds");
 					}
 				})();
