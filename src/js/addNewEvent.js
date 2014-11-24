@@ -52,8 +52,20 @@ var addUserEvent = function(){
 		'description': description
 	});
 	localStorage.setItem("userEvents", JSON.stringify(userEvents));
+
+	document.getElementById('eventAmount').value = null;
+	document.getElementById('eventDescription').value = null;
+	$('#newEventComplete').toggleClass('hidden');
 };
 var changeEventType = function(context) {
 	localStorage.setItem("currentEventMode", EVENT_MODE_NAME.indexOf(context));
 	location.reload();
+};
+var addAnotherEvent = function() {
+	// hide dialog
+	$("#newEventComplete").toggleClass("hidden");
+	// scroll to top
+	$('html, body').animate({scrollTop:0}, 'slow');
+	// set focus to first input field
+	document.getElementById('eventAmount').focus();
 };

@@ -33,7 +33,6 @@
 		<h1 class="centeredContent">Add Financial Event</h1>
 
 		<div class="centeredContent">
-
 			<span><a id="SPENDING" class="btn btn-default" onclick="changeEventType(this.id)">Spending</a></span>
 			<span><a id="SAVING" class="btn btn-default" onclick="changeEventType(this.id)">Saving</a></span>
 			<span><a id="ROR" class="btn btn-default" onclick="changeEventType(this.id)">Rate of Return</a></span>
@@ -122,8 +121,21 @@
 			
 			<div>
 				<br/>
-				<span><button type="submit">CANCEL</button></span>
+				<span><button type="submit" onclick="window.location.href = './planner.html';">CANCEL</button></span>
 				<span><button type="submit" onclick='addUserEvent()'>SAVE</button></span>
+			</div>
+			<br/>
+			<div id="newEventComplete" class="alert alert-success alert-dismissible hidden" role="alert" style="width: 500px;">
+				<button type="button" class="close" data-dismiss="alert">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<strong>Event Successfully Added!</strong><br/>
+				<button type="button" class="btn btn-success" aria-expanded="false" onclick="addAnotherEvent()">
+					Add Another Event 
+				</button>
+				<button type="button" class="btn btn-info" aria-expanded="false" onclick="window.location.href = './planner.html';">
+					View Planner
+				</button>
 			</div>
 		</div>
 	</body>
