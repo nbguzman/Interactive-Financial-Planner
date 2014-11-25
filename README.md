@@ -5,6 +5,6 @@ A financial planning app to help users easily set, track, and reach financial go
 
 ###Design
 ####First Iteration
-![](img/chart)
+![](img/chart.png)
 ####Mockup
-![](img/rough)
+![](img/rough.png)
