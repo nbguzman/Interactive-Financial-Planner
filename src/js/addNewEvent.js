@@ -56,6 +56,10 @@ var addUserEvent = function(){
 	document.getElementById('eventAmount').value = null;
 	document.getElementById('eventDescription').value = null;
 	$('#newEventComplete').toggleClass('hidden');
+	// scroll to bottom of window, to show new dialog
+	$('html, body').animate({scrollTop: $(document).height()}, 'slow');
+	// set focus to first input field
+	document.getElementById('eventAmount').focus();
 };
 var changeEventType = function(context) {
 	localStorage.setItem("currentEventMode", EVENT_MODE_NAME.indexOf(context));
