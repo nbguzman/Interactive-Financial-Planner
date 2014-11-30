@@ -28,6 +28,12 @@
 		<!-- load the d3 example code -->
 		<script src="../js/planner.js"></script>
 
+		<script>
+			var isSetUp = JSON.parse(localStorage.getItem("interestRate")) != null && JSON.parse(localStorage.getItem("startingAmount")) != null;
+			if (!isSetUp) {
+				window.location.href = './setup.html';
+			}
+		</script>
 		<script>modeChoice();</script>
 
 		<h1 class="centeredContent">Financial Savings Planner</h1>
