@@ -4,9 +4,9 @@ var init = function() {
 		width = 600 - margin.left - margin.right,
 		height = 270 - margin.top - margin.bottom;
 
-	// Parse the date / time
+	// Function to Parse the date / time
 	var parseDate = d3.time.format("%d-%b-%y").parse;
-
+  
 	// Set the ranges
 	var x = d3.time.scale().range([0, width]);
 	var y = d3.scale.linear().range([height, 0]);
@@ -37,11 +37,30 @@ var init = function() {
 		console.log("no data");
 		return;
 	}
-
+  
+  
+  var saveOrSpendEvents = [];
+  
 	userEvents.forEach(function(d) {
 		d.date = parseDate(d.date);
+    // get save or spend events
+    if(d.type !== "2") {
+      saveOrSpendEvents.push(d);
+    }
 	});
 
+  // sort points by date
+  saveOrSpendEvents.sort(function(a,b) { return a.date - b.date || a.amount - b.amount});
+  // keep track of total savings
+  var totalSavings = 0;
+  saveOrSpendEvents.forEach(function(e){
+    totalSavings += e.amount;
+    e.amount = totalSavings;
+    console.log(e);
+  });
+
+  userEvents = saveOrSpendEvents;
+  
 	// Scale the range of the data
 	x.domain(d3.extent(userEvents, function(d) { return d.date; }));
 	y.domain([0, d3.max(userEvents, function(d) { return d.amount; })]);
