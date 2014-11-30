@@ -1,7 +1,7 @@
 var addUserEvent = function(){
 	var amount = description = date = null;
 	try{
-		amount = parseFloat(document.getElementById('eventAmount').value);
+		amount = stripSymbolAndGetFloat(document.getElementById('eventAmount').value);
 		description = document.getElementById('eventDescription').value;
 		date = $("#datepicker").datepicker('getDate');
 
@@ -19,7 +19,7 @@ var addUserEvent = function(){
 			throw "Invalid Date"
 		}
 
-		if (typeof amount === "undefined" || amount === null || isNaN(amount)) {
+		if (amount === null) {
 			amount = null;
 			throw "Invalid amount"
 		}
@@ -72,4 +72,24 @@ var addAnotherEvent = function() {
 	$('html, body').animate({scrollTop:0}, 'slow');
 	// set focus to first input field
 	document.getElementById('eventAmount').focus();
+};
+var addStartingNumbers = function() {
+	var startingAmount = stripSymbolAndGetFloat(document.getElementById('startingAmount').value);
+	var interestRate = stripSymbolAndGetFloat(document.getElementById('interestRate').value);
+	if (startingAmount !== null && interestRate !== null) {
+		localStorage.setItem("startingAmount", startingAmount);
+		localStorage.setItem("interestRate", interestRate);
+		window.location.href = './planner.html';
+	}
+	console.log("error");
+};
+var stripSymbolAndGetFloat = function(value) {
+	if (typeof value === "undefined" || value === null) {
+		return null;
+	}
+	result = value.replace(/[`\[A-Z\]~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '');
+	if (isNaN(result)) {
+		return null;
+	}
+	return result;
 };
