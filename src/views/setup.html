@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Set Up</title>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="../stylesheets/newEvent.css">
+	</head>
+
+	<body>
+		<!-- load the d3.js library -->    
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<!-- jQuery -->
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<!-- load the data were using -->
+		<script src="../data/data.js"></script>
+		<!--  -->
+		<script src="../js/addNewEvent.js"></script>
+		<script>modeChoice();</script>
+
+
+		<h1 class="centeredContent">Interactive Financial Planner Set Up</h1>
+
+		<div class="division">
+			<button type="submit" class="btn btn-default" aria-label="Left Align" onclick="window.history.back();">
+				<span class="glyphicon glyphicon-share-alt icon-flipped" aria-hidden="true"></span>
+			</button>
+			<br/><br/>
+
+			<p>Welcome to Interactive Financial Planner! Before being able to plan with IFP, we need help to set up your tracker</p>
+			<h4>Step 1</h4>
+			We first need you to enter the amount of money you wil be starting with. Dont worry about not having enough money to plan for, any amount will do!<br/>
+			I will be starting off with $<input id="startingAmount" type="number" placeholder="100">
+			<h4>Step 2</h4>
+			Now that you entered your starting amount, enter the interest rate for your investments.<br/>
+			My investments will be maturing at a rate of <input id="interestRate" type="number" placeholder="7.5%">
+
+			<div>
+				<br/>
+				<span><button type="submit" onclick="window.location.href = './planner.html';">CANCEL</button></span>
+				<span><button type="submit" onclick='addStartingNumbers()'>SAVE</button></span>
+			</div>
+			<br/>
+			
+		</div>
+	</body>
+</html>
